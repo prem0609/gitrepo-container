@@ -1,5 +1,5 @@
 
-peline {
+pipeline {
 	agent{
 	label{
 			label "QA"
@@ -35,4 +35,4 @@ peline {
 			}
 		}
 	    }
-	}apache httpd file
+	}
