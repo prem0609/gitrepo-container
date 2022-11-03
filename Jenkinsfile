@@ -1,5 +1,5 @@
 
-peline {
+pipeline {
 	agent{
 	label{
 			label "QA"
@@ -16,7 +16,7 @@ peline {
 				    sh "sudo rm -rf *"
 					sh "sudo yum install git -y"
 					sh "sudo git init"
-					sh "sudo git clone https://github.com/prem0609/container-gitrepo.git"
+					sh "sudo git clone https://github.com/prem0609/gitrepo-container.git"
 				}
 			}
 		       stage ("docker-install") {
@@ -30,9 +30,9 @@ peline {
 			    sh "sudo docker rm -f prem"
 			    sh "sudo docker system prune -a -f"
 	                   sh "sudo docker run -itdp 90:80 --name prem httpd"
-	                   sh "sudo chmod -R 777 /mnt/container-1-90/container-gitrepo/index.html"
-		           sh "sudo docker cp /mnt/container-1-90/container-gitrepo/index.html prem:/usr/local/apache2/htdocs" 
+	                   sh "sudo chmod -R 777 /mnt/container-1-90/gitrepo-container/index.html"
+		           sh "sudo docker cp /mnt/container-1-90/gitrepo-container/index.html prem:/usr/local/apache2/htdocs" 
 			}
 		}
 	    }
-	}apache httpd file
+	}
